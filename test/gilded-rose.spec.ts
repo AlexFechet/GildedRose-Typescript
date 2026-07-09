@@ -153,4 +153,37 @@ describe('normal_quality_under0', function () {
 
 });
 
+describe('conjured_over0', function () {
+
+    it('should be -2', function() {
+        const gildedRose = new GildedRose([ new Item('Conjured Mana Cake', 1, 4) ]);
+        const items = gildedRose.updateQuality();
+        expect(items).to.deep.equal([
+            new Item('Conjured Mana Cake', 0, 2)
+        ])});
+
+});
+
+describe('conjured_under0', function () {
+
+    it('should be -4', function() {
+        const gildedRose = new GildedRose([ new Item('Conjured Mana Cake', 0, 4) ]);
+        const items = gildedRose.updateQuality();
+        expect(items).to.deep.equal([
+            new Item('Conjured Mana Cake', -1, 0)
+        ])});
+
+});
+
+describe('conjured_quality0', function () {
+
+    it('should be -4', function() {
+        const gildedRose = new GildedRose([ new Item('Conjured Mana Cake', 0, 3) ]);
+        const items = gildedRose.updateQuality();
+        expect(items).to.deep.equal([
+            new Item('Conjured Mana Cake', -1, 0)
+        ])});
+
+});
+
 

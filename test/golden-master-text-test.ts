@@ -19,7 +19,6 @@ describe('single day', function () {
             new Item('item3', 0, 15),
             new Item('item4', -2, 0),
             new Item('item5', 0, 0),
-
         ]);
         const items = gildedRose.updateQuality();
 
