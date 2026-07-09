@@ -11,7 +11,7 @@ describe('Gilded Rose', function () {
 
 });
 
-describe('Sulfuras', function () {
+describe('Sulfuras_day0', function () {
 
     it('should be immutable', function() {
         const gildedRose = new GildedRose([ new Item('Sulfuras, Hand of Ragnaros', 0, 0) ]);
@@ -22,7 +22,7 @@ describe('Sulfuras', function () {
 
 });
 
-describe('Sulfuras2', function () {
+describe('Sulfuras_normal', function () {
 
     it('should be immutable', function() {
         const gildedRose = new GildedRose([ new Item('Sulfuras, Hand of Ragnaros', 1, 10) ]);
@@ -33,7 +33,7 @@ describe('Sulfuras2', function () {
 
 });
 
-describe('Sulfuras', function () {
+describe('Sulfuras_quality0', function () {
 
     it('should be immutable', function() {
         const gildedRose = new GildedRose([ new Item('Sulfuras, Hand of Ragnaros', 20, 0) ]);
