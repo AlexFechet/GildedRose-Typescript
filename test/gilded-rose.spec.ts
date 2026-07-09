@@ -1,17 +1,7 @@
 import { expect } from 'chai';
 import { Item, GildedRose } from '../app/gilded-rose';
 
-describe('Gilded Rose', function () {
-
-    it('should foo', function() {
-        const gildedRose = new GildedRose([ new Item('foo', 0, 0) ]);
-        const items = gildedRose.updateQuality();
-        expect(items[0].name).to.equal('foo');
-    });
-
-});
-
-describe('Sulfuras_day0', function () {
+describe('Sulfuras when day is 0', function () {
 
     it('should be immutable', function() {
         const gildedRose = new GildedRose([ new Item('Sulfuras, Hand of Ragnaros', 0, 0) ]);
@@ -22,7 +12,7 @@ describe('Sulfuras_day0', function () {
 
 });
 
-describe('Sulfuras_normal', function () {
+describe('Sulfuras on normal day', function () {
 
     it('should be immutable', function() {
         const gildedRose = new GildedRose([ new Item('Sulfuras, Hand of Ragnaros', 1, 10) ]);
@@ -33,7 +23,7 @@ describe('Sulfuras_normal', function () {
 
 });
 
-describe('Sulfuras_quality0', function () {
+describe('Sulfuras when quality is 0', function () {
 
     it('should be immutable', function() {
         const gildedRose = new GildedRose([ new Item('Sulfuras, Hand of Ragnaros', 20, 0) ]);
@@ -44,7 +34,7 @@ describe('Sulfuras_quality0', function () {
 
 });
 
-describe('Backstage_gr10', function () {
+describe('Backstage object when the number of days is greater than 0', function () {
 
     it('should be +1', function() {
         const gildedRose = new GildedRose([ new Item('Backstage passes to a TAFKAL80ETC concert', 20, 1) ]);
@@ -55,7 +45,7 @@ describe('Backstage_gr10', function () {
 
 });
 
-describe('Backstage_5..10', function () {
+describe('Backstage object when number of days in betwwen 5 and 10 days', function () {
 
     it('should be +2', function() {
         const gildedRose = new GildedRose([ new Item('Backstage passes to a TAFKAL80ETC concert', 10, 1) ]);
@@ -66,7 +56,7 @@ describe('Backstage_5..10', function () {
 
 });
 
-describe('Backstage_0..5', function () {
+describe('Backstage object when number of days is less than 5', function () {
 
     it('should be +3', function() {
         const gildedRose = new GildedRose([ new Item('Backstage passes to a TAFKAL80ETC concert', 5, 1) ]);
@@ -77,7 +67,7 @@ describe('Backstage_0..5', function () {
 
 });
 
-describe('Backstage_ls0', function () {
+describe('Backstage object then number of days in neagative', function () {
 
     it('should be 0', function() {
         const gildedRose = new GildedRose([ new Item('Backstage passes to a TAFKAL80ETC concert', 0, 1) ]);
@@ -88,7 +78,7 @@ describe('Backstage_ls0', function () {
 
 });
 
-describe('Backstage_quality_over50', function () {
+describe('Backstage when quality is over 50', function () {
 
     it('should be 0', function() {
         const gildedRose = new GildedRose([ new Item('Backstage passes to a TAFKAL80ETC concert', 2, 50) ]);
@@ -99,7 +89,7 @@ describe('Backstage_quality_over50', function () {
 
 });
 
-describe('Brie_u50', function () {
+describe('Brie when quality in under 50', function () {
 
     it('should be +1', function() {
         const gildedRose = new GildedRose([ new Item('Aged Brie', 1, 1) ]);
@@ -110,7 +100,7 @@ describe('Brie_u50', function () {
 
 });
 
-describe('Brie_o50', function () {
+describe('Brie when quality is over 50', function () {
 
     it('should be 50', function() {
         const gildedRose = new GildedRose([ new Item('Aged Brie', 0, 50) ]);
@@ -121,7 +111,7 @@ describe('Brie_o50', function () {
 
 });
 
-describe('normal_quality_over0', function () {
+describe('normal object when quality id over 0', function () {
 
     it('should be -1', function() {
         const gildedRose = new GildedRose([ new Item('gigel', 1, 1) ]);
@@ -131,7 +121,7 @@ describe('normal_quality_over0', function () {
         ])});
 
 });
-describe('normal_double_decress', function () {
+describe('normal object when number of days is negative', function () {
 
     it('should be -2', function() {
         const gildedRose = new GildedRose([ new Item('gigel', -1, 4) ]);
@@ -142,7 +132,7 @@ describe('normal_double_decress', function () {
 
 });
 
-describe('normal_quality_under0', function () {
+describe('normal object when quality is under 0', function () {
 
     it('should be 0', function() {
         const gildedRose = new GildedRose([ new Item('gigel', 0, 0) ]);
@@ -153,7 +143,7 @@ describe('normal_quality_under0', function () {
 
 });
 
-describe('conjured_over0', function () {
+describe('conjured object when quality is over 0', function () {
 
     it('should be -2', function() {
         const gildedRose = new GildedRose([ new Item('Conjured Mana Cake', 1, 4) ]);
@@ -164,7 +154,7 @@ describe('conjured_over0', function () {
 
 });
 
-describe('conjured_under0', function () {
+describe('conjured object when days is 0', function () {
 
     it('should be -4', function() {
         const gildedRose = new GildedRose([ new Item('Conjured Mana Cake', 0, 4) ]);
@@ -175,7 +165,7 @@ describe('conjured_under0', function () {
 
 });
 
-describe('conjured_quality0', function () {
+describe('conjured object when quality is under 0', function () {
 
     it('should be -4', function() {
         const gildedRose = new GildedRose([ new Item('Conjured Mana Cake', 0, 3) ]);

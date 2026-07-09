@@ -1,10 +1,5 @@
-// const expect = require('chai');
-// const GildedRose = require('../app/gilded-rose');
-// const Item = require('../app/gilded-rose');
 import { expect } from 'chai';
 import { Item, GildedRose } from '../app/gilded-rose';
-
-
 
 describe('single day', function () {
 
