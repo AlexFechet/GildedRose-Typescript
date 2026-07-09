@@ -18,7 +18,7 @@ describe('single day', function () {
             new Item('item2', 15, 0),
             new Item('item3', 0, 15),
             new Item('item4', -2, 0),
-            new Item('item5', 0, -4),
+            new Item('item5', 0, 0),
 
         ]);
         const items = gildedRose.updateQuality();
@@ -32,7 +32,7 @@ describe('single day', function () {
             new Item('item2', 14, 0),
             new Item('item3', -1, 13),
             new Item('item4', -3, 0),
-            new Item('item5', -1, -4),
+            new Item('item5', -1, 0),
         ]);
     });
 
@@ -50,7 +50,7 @@ describe('multiple days', function () {
             new Item('item2', 15, 0),
             new Item('item3', 0, 15),
             new Item('item4', -2, 0),
-            new Item('item5', 0, -4),
+            new Item('item5', 0, 0),
 
         ]);
         gildedRose.updateQuality();
@@ -67,7 +67,7 @@ describe('multiple days', function () {
             new Item('item2', 11, 0),
             new Item('item3', -4, 7),
             new Item('item4', -6, 0),
-            new Item('item5', -4, -4),
+            new Item('item5', -4, 0),
         ]);
     });
 
