@@ -88,4 +88,69 @@ describe('Backstage_ls0', function () {
 
 });
 
+describe('Backstage_quality_over50', function () {
+
+    it('should be 0', function() {
+        const gildedRose = new GildedRose([ new Item('Backstage passes to a TAFKAL80ETC concert', 2, 50) ]);
+        const items = gildedRose.updateQuality();
+        expect(items).to.deep.equal([
+            new Item('Backstage passes to a TAFKAL80ETC concert', 1, 50)
+        ])});
+
+});
+
+describe('Brie_u50', function () {
+
+    it('should be +1', function() {
+        const gildedRose = new GildedRose([ new Item('Aged Brie', 1, 1) ]);
+        const items = gildedRose.updateQuality();
+        expect(items).to.deep.equal([
+            new Item('Aged Brie', 0, 2)
+        ])});
+
+});
+
+describe('Brie_o50', function () {
+
+    it('should be 50', function() {
+        const gildedRose = new GildedRose([ new Item('Aged Brie', 0, 50) ]);
+        const items = gildedRose.updateQuality();
+        expect(items).to.deep.equal([
+            new Item('Aged Brie', -1, 50)
+        ])});
+
+});
+
+describe('normal_quality_over0', function () {
+
+    it('should be -1', function() {
+        const gildedRose = new GildedRose([ new Item('gigel', 1, 1) ]);
+        const items = gildedRose.updateQuality();
+        expect(items).to.deep.equal([
+            new Item('gigel', 0, 0)
+        ])});
+
+});
+describe('normal_double_decress', function () {
+
+    it('should be -2', function() {
+        const gildedRose = new GildedRose([ new Item('gigel', -1, 4) ]);
+        const items = gildedRose.updateQuality();
+        expect(items).to.deep.equal([
+            new Item('gigel', -2, 2)
+        ])});
+
+});
+
+describe('normal_quality_under0', function () {
+
+    it('should be 0', function() {
+        const gildedRose = new GildedRose([ new Item('gigel', 0, 0) ]);
+        const items = gildedRose.updateQuality();
+        expect(items).to.deep.equal([
+            new Item('gigel', -1, 0)
+        ])});
+
+});
+
 
