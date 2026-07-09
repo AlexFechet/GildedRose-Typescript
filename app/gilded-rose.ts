@@ -36,31 +36,19 @@ export class GildedRose {
                 } else {
                     this.items[i].quality = this.items[i].quality + 1
                 }
-                if(this.items[i].quality > 50) {
-                    this.items[i].quality = 50;
-                }
-                continue;
-            }
-
-            if (this.items[i].name === 'Aged Brie') {
+            } else if (this.items[i].name === 'Aged Brie') {
                 if (this.items[i].sellIn < 0) {
                     this.items[i].quality = this.items[i].quality + 2
                 } else {
                     this.items[i].quality = this.items[i].quality + 1
                 }
-                if(this.items[i].quality > 50) {
-                    this.items[i].quality = 50;
+            } else if (this.items[i].name === "Conjured Mana Cake") {
+                if (this.items[i].sellIn < 0) {
+                    this.items[i].quality = this.items[i].quality - 4
+                } else {
+                    this.items[i].quality = this.items[i].quality - 2
                 }
-                continue;
-            }
-
-            if (this.items[i].sellIn < 0) {
-                this.items[i].quality = this.items[i].quality - 2
             } else {
-                this.items[i].quality = this.items[i].quality - 1
-            }
-
-            if (this.items[i].name === "Conjured Mana Cake") {
                 if (this.items[i].sellIn < 0) {
                     this.items[i].quality = this.items[i].quality - 2
                 } else {
@@ -68,10 +56,12 @@ export class GildedRose {
                 }
             }
 
+            if(this.items[i].quality > 50) {
+                this.items[i].quality = 50;
+            }
             if(this.items[i].quality < 0) {
                 this.items[i].quality = 0;
             }
-
         }
 
         return this.items;
